@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101820">
+<title>ReCapture — Suporte e privacidade</title>
+<meta name="description" content="Páginas oficiais de suporte e privacidade do ReCapture, o app para gravar capturas de pesca no iPhone.">
+<link rel="canonical" href="https://guirar.github.io/recapture-legal/">
+<style>
+  :root {
+    --bg: #f6f7f9;
+    --surface: #ffffff;
+    --text: #17202a;
+    --muted: #5b6773;
+    --border: #e1e7ef;
+    --header: #101820;
+    --accent: #ff4d3d;
+    --link: #0b62c4;
+    --summary: #fff4f2;
+    --summary-border: #ffd6d0;
+    --table-head: #f0f4f8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0d1218;
+      --surface: #141c24;
+      --text: #e8eef4;
+      --muted: #a3b0bd;
+      --border: #26323e;
+      --header: #0a0f14;
+      --accent: #ff5a4e;
+      --link: #7cc4ff;
+      --summary: #241715;
+      --summary-border: #5a2b26;
+      --table-head: #1b2530;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+  }
+  a { color: var(--link); text-underline-offset: 2px; }
+  a:hover { text-decoration-thickness: 2px; }
+  a:focus-visible, button:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+  .skip {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    background: var(--surface);
+    color: var(--text);
+    padding: 10px 14px;
+    z-index: 10;
+  }
+  .skip:focus { left: 12px; top: 12px; }
+  .site-header {
+    background: var(--header);
+    color: #ffffff;
+    padding: 16px 20px;
+  }
+  .header-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: -0.01em;
+  }
+  .brand-dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 4px rgba(255, 77, 61, 0.18);
+    flex: none;
+  }
+  .lang-nav { display: flex; gap: 6px; }
+  .lang-nav button {
+    appearance: none;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    color: #ffffff;
+    border-radius: 999px;
+    padding: 5px 12px;
+    font: inherit;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+  }
+  .lang-nav button:hover { border-color: rgba(255, 255, 255, 0.6); }
+  .lang-nav button[aria-pressed="true"] {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #ffffff;
+  }
+  main {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 40px 20px 64px;
+  }
+  .lang-ready [data-lang-section] { display: none; }
+  .lang-ready [data-lang-section].is-active { display: block; }
+  .eyebrow {
+    margin: 0 0 10px;
+    color: var(--accent);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  h1 {
+    margin: 0 0 10px;
+    font-size: clamp(2rem, 7vw, 3.1rem);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+  }
+  .tagline {
+    margin: 0 0 14px;
+    font-size: clamp(1.12rem, 3vw, 1.38rem);
+    font-weight: 650;
+    line-height: 1.35;
+    max-width: 36ch;
+  }
+  .lead {
+    margin: 0;
+    max-width: 66ch;
+    color: var(--muted);
+    font-size: 1.03rem;
+  }
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 26px 0 0;
+  }
+  .button {
+    display: inline-block;
+    background: var(--accent);
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 650;
+    padding: 11px 18px;
+    border-radius: 10px;
+    border: 1px solid var(--accent);
+  }
+  .button:hover { filter: brightness(0.94); }
+  .button.secondary {
+    background: var(--surface);
+    color: var(--text);
+    border-color: var(--border);
+  }
+  .button.secondary:hover { border-color: var(--muted); filter: none; }
+  .facts {
+    list-style: none;
+    margin: 30px 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 12px;
+  }
+  .facts li {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 16px;
+  }
+  .facts strong { display: block; font-size: 0.98rem; }
+  .facts span { color: var(--muted); font-size: 0.9rem; line-height: 1.5; }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+    margin: 34px 0 0;
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px;
+  }
+  .card h2 { margin: 0 0 8px; font-size: 1.14rem; letter-spacing: -0.01em; }
+  .card p { margin: 0 0 14px; color: var(--muted); font-size: 0.95rem; }
+  .card a { font-weight: 650; }
+  .crumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    margin: 0 0 24px;
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+  .crumbs a { color: var(--muted); }
+  .crumbs .current { color: var(--text); font-weight: 600; }
+  footer {
+    border-top: 1px solid var(--border);
+    background: var(--surface);
+    padding: 22px 20px;
+    color: var(--muted);
+    font-size: 0.88rem;
+  }
+  .footer-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    justify-content: space-between;
+  }
+  .footer-inner a { color: var(--muted); }
+  .noscript {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 12px 20px 0;
+    color: var(--muted);
+    font-size: 0.88rem;
+  }
+  @media print {
+    .site-header, .actions, footer { display: none; }
+    body { background: #ffffff; color: #000000; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Pular para o conteúdo</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html" data-page="index.html"><span class="brand-dot" aria-hidden="true"></span>ReCapture</a>
+    <nav class="lang-nav" aria-label="Language">
+      <button type="button" data-lang="pt" aria-pressed="true" aria-label="Português">PT</button>
+      <button type="button" data-lang="en" aria-pressed="false" aria-label="English">EN</button>
+      <button type="button" data-lang="es" aria-pressed="false" aria-label="Español">ES</button>
+    </nav>
+  </div>
+</header>
+<noscript><p class="noscript">Todos os idiomas estão disponíveis abaixo. / All languages are available below. / Todos los idiomas están disponibles abajo.</p></noscript>
+<main id="main">
+
+  <section lang="pt-BR" data-lang-section="pt">
+    <p class="eyebrow">Site oficial</p>
+    <h1>ReCapture</h1>
+    <p class="tagline">Grave a fisgada inteira — não só o peixe.</p>
+    <p class="lead">Buffer de pré-gravação, comandos de voz no aparelho e uma biblioteca que fica no seu iPhone. Sem conta, sem nuvem, sem rastreadores.</p>
+    <div class="actions">
+      <a class="button" href="support.html" data-page="support.html">Abrir o suporte</a>
+      <a class="button secondary" href="privacy.html" data-page="privacy.html">Ler a privacidade</a>
+    </div>
+    <ul class="facts">
+      <li><strong>100% local</strong><span>Capturas processadas e armazenadas no iPhone.</span></li>
+      <li><strong>Sem conta</strong><span>Nenhum login, e-mail ou cadastro.</span></li>
+      <li><strong>Sem rastreadores</strong><span>Nenhum analytics, anúncio ou cookie.</span></li>
+    </ul>
+    <div class="cards">
+      <article class="card">
+        <h2>Privacidade</h2>
+        <p>Saiba quais dados o app trata e por que suas capturas ficam no seu iPhone.</p>
+        <a href="privacy.html" data-page="privacy.html">Ler a política →</a>
+      </article>
+      <article class="card">
+        <h2>Suporte</h2>
+        <p>Passo a passo, comandos de voz, Premium, permissões e soluções de problemas.</p>
+        <a href="support.html" data-page="support.html">Abrir o suporte →</a>
+      </article>
+    </div>
+  </section>
+
+  <section lang="en" data-lang-section="en">
+    <p class="eyebrow">Official site</p>
+    <h1>ReCapture</h1>
+    <p class="tagline">Capture the strike, not just the fish.</p>
+    <p class="lead">A pre-record buffer, on-device voice commands, and a library that stays on your iPhone. No account, no cloud, no trackers.</p>
+    <div class="actions">
+      <a class="button" href="support.html" data-page="support.html">Get support</a>
+      <a class="button secondary" href="privacy.html" data-page="privacy.html">Read the privacy policy</a>
+    </div>
+    <ul class="facts">
+      <li><strong>100% on-device</strong><span>Captures processed and stored on your iPhone.</span></li>
+      <li><strong>No account</strong><span>No login, email, or sign-up.</span></li>
+      <li><strong>No trackers</strong><span>No analytics, ads, or cookies.</span></li>
+    </ul>
+    <div class="cards">
+      <article class="card">
+        <h2>Privacy</h2>
+        <p>See what data the app handles and why your captures stay on your iPhone.</p>
+        <a href="privacy.html" data-page="privacy.html">Read the policy →</a>
+      </article>
+      <article class="card">
+        <h2>Support</h2>
+        <p>Step-by-step help, voice commands, Premium, permissions, and troubleshooting.</p>
+        <a href="support.html" data-page="support.html">Get support →</a>
+      </article>
+    </div>
+  </section>
+
+  <section lang="es" data-lang-section="es">
+    <p class="eyebrow">Sitio oficial</p>
+    <h1>ReCapture</h1>
+    <p class="tagline">Captura la picada, no solo el pez.</p>
+    <p class="lead">Búfer de pregrabación, comandos de voz en el dispositivo y una biblioteca que se queda en tu iPhone. Sin cuenta, sin nube, sin rastreadores.</p>
+    <div class="actions">
+      <a class="button" href="support.html" data-page="support.html">Abrir el soporte</a>
+      <a class="button secondary" href="privacy.html" data-page="privacy.html">Leer la privacidad</a>
+    </div>
+    <ul class="facts">
+      <li><strong>100% local</strong><span>Capturas procesadas y almacenadas en tu iPhone.</span></li>
+      <li><strong>Sin cuenta</strong><span>Sin inicio de sesión, correo ni registro.</span></li>
+      <li><strong>Sin rastreadores</strong><span>Sin analítica, anuncios ni cookies.</span></li>
+    </ul>
+    <div class="cards">
+      <article class="card">
+        <h2>Privacidad</h2>
+        <p>Descubre qué datos trata la app y por qué tus capturas se quedan en tu iPhone.</p>
+        <a href="privacy.html" data-page="privacy.html">Leer la política →</a>
+      </article>
+      <article class="card">
+        <h2>Soporte</h2>
+        <p>Guía paso a paso, comandos de voz, Premium, permisos y solución de problemas.</p>
+        <a href="support.html" data-page="support.html">Abrir el soporte →</a>
+      </article>
+    </div>
+  </section>
+
+</main>
+<footer>
+  <div class="footer-inner">
+    <span>ReCapture · Última atualização: 28/10/2026</span>
+    <span><a href="https://github.com/guirar/recapture-legal/issues" target="_blank" rel="noopener">GitHub Issues</a></span>
+  </div>
+</footer>
+<script>
+(function () {
+  "use strict";
+  var sections = Array.prototype.slice.call(document.querySelectorAll("[data-lang-section]"));
+  var buttons = Array.prototype.slice.call(document.querySelectorAll("[data-lang]"));
+  var links = Array.prototype.slice.call(document.querySelectorAll("a[data-page]"));
+
+  function normalize(value) {
+    value = String(value || "").toLowerCase();
+    if (value.indexOf("pt") === 0) { return "pt"; }
+    if (value.indexOf("es") === 0) { return "es"; }
+    if (value.indexOf("en") === 0) { return "en"; }
+    return "";
+  }
+
+  function initialLanguage() {
+    var query = "";
+    try {
+      query = new URLSearchParams(window.location.search).get("lang") || "";
+    } catch (error) {}
+    return normalize(query) || normalize(navigator.language) || "pt";
+  }
+
+  function setLanguage(language) {
+    sections.forEach(function (section) {
+      section.classList.toggle("is-active", section.getAttribute("data-lang-section") === language);
+    });
+    buttons.forEach(function (button) {
+      button.setAttribute("aria-pressed", button.getAttribute("data-lang") === language ? "true" : "false");
+    });
+    links.forEach(function (link) {
+      link.setAttribute("href", link.getAttribute("data-page") + "?lang=" + language);
+    });
+    document.documentElement.setAttribute("lang", language === "pt" ? "pt-BR" : language);
+  }
+
+  buttons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      var language = button.getAttribute("data-lang");
+      setLanguage(language);
+      try { history.replaceState(null, "", "?lang=" + language); } catch (error) {}
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  });
+
+  setLanguage(initialLanguage());
+  document.documentElement.classList.add("lang-ready");
+})();
+</script>
+</body>
+</html>

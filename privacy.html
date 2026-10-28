@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101820">
+<title>Política de Privacidade — ReCapture</title>
+<meta name="description" content="Política de privacidade do ReCapture: dados não coletados, processamento no aparelho, compras pela Apple e contato.">
+<link rel="canonical" href="https://guirar.github.io/recapture-legal/privacy.html">
+<style>
+  :root {
+    --bg: #f6f7f9;
+    --surface: #ffffff;
+    --text: #17202a;
+    --muted: #5b6773;
+    --border: #e1e7ef;
+    --header: #101820;
+    --accent: #ff4d3d;
+    --link: #0b62c4;
+    --summary: #fff4f2;
+    --summary-border: #ffd6d0;
+    --table-head: #f0f4f8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0d1218;
+      --surface: #141c24;
+      --text: #e8eef4;
+      --muted: #a3b0bd;
+      --border: #26323e;
+      --header: #0a0f14;
+      --accent: #ff5a4e;
+      --link: #7cc4ff;
+      --summary: #241715;
+      --summary-border: #5a2b26;
+      --table-head: #1b2530;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+  }
+  a { color: var(--link); text-underline-offset: 2px; }
+  a:hover { text-decoration-thickness: 2px; }
+  a:focus-visible, button:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+  .skip {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    background: var(--surface);
+    color: var(--text);
+    padding: 10px 14px;
+    z-index: 10;
+  }
+  .skip:focus { left: 12px; top: 12px; }
+  .site-header {
+    background: var(--header);
+    color: #ffffff;
+    padding: 16px 20px;
+  }
+  .header-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: -0.01em;
+  }
+  .brand-dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 4px rgba(255, 77, 61, 0.18);
+    flex: none;
+  }
+  .lang-nav { display: flex; gap: 6px; }
+  .lang-nav button {
+    appearance: none;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    color: #ffffff;
+    border-radius: 999px;
+    padding: 5px 12px;
+    font: inherit;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+  }
+  .lang-nav button:hover { border-color: rgba(255, 255, 255, 0.6); }
+  .lang-nav button[aria-pressed="true"] {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #ffffff;
+  }
+  main {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 40px 20px 64px;
+  }
+  .lang-ready [data-lang-section] { display: none; }
+  .lang-ready [data-lang-section].is-active { display: block; }
+  h1 {
+    margin: 0 0 8px;
+    font-size: clamp(1.85rem, 6vw, 2.7rem);
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+  }
+  h2 {
+    margin: 36px 0 10px;
+    font-size: 1.28rem;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+  }
+  h3 {
+    margin: 24px 0 6px;
+    font-size: 1.04rem;
+    line-height: 1.35;
+  }
+  p { margin: 10px 0; }
+  ul, ol { padding-left: 1.3rem; }
+  li { margin: 7px 0; }
+  .updated {
+    margin: 0 0 18px;
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+  .lead {
+    max-width: 68ch;
+    color: var(--muted);
+    font-size: 1.03rem;
+  }
+  .crumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    margin: 0 0 24px;
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+  .crumbs a { color: var(--muted); }
+  .crumbs .current { color: var(--text); font-weight: 600; }
+  .summary {
+    margin: 24px 0;
+    padding: 16px 18px;
+    background: var(--summary);
+    border: 1px solid var(--summary-border);
+    border-left: 4px solid var(--accent);
+    border-radius: 10px;
+  }
+  .summary strong { display: block; margin-bottom: 4px; }
+  .summary p { margin: 0; }
+  .note {
+    margin-top: 28px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+  footer {
+    border-top: 1px solid var(--border);
+    background: var(--surface);
+    padding: 22px 20px;
+    color: var(--muted);
+    font-size: 0.88rem;
+  }
+  .footer-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    justify-content: space-between;
+  }
+  .footer-inner a { color: var(--muted); }
+  .noscript {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 12px 20px 0;
+    color: var(--muted);
+    font-size: 0.88rem;
+  }
+  @media print {
+    .site-header, footer { display: none; }
+    body { background: #ffffff; color: #000000; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Pular para o conteúdo</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html" data-page="index.html"><span class="brand-dot" aria-hidden="true"></span>ReCapture</a>
+    <nav class="lang-nav" aria-label="Language">
+      <button type="button" data-lang="pt" aria-pressed="true" aria-label="Português">PT</button>
+      <button type="button" data-lang="en" aria-pressed="false" aria-label="English">EN</button>
+      <button type="button" data-lang="es" aria-pressed="false" aria-label="Español">ES</button>
+    </nav>
+  </div>
+</header>
+<noscript><p class="noscript">Todos os idiomas estão disponíveis abaixo. / All languages are available below. / Todos los idiomas están disponibles abajo.</p></noscript>
+<main id="main">
+
+  <section lang="pt-BR" data-lang-section="pt">
+    <nav class="crumbs" aria-label="Navegação">
+      <a href="index.html" data-page="index.html">Início</a>
+      <span aria-hidden="true">·</span>
+      <span class="current" aria-current="page">Privacidade</span>
+      <span aria-hidden="true">·</span>
+      <a href="support.html" data-page="support.html">Suporte</a>
+    </nav>
+    <h1>Política de Privacidade</h1>
+    <p class="updated">Última atualização: 28/10/2026</p>
+    <p class="lead">O ReCapture é um app para iPhone que grava capturas de pesca com buffer de pré-gravação e comandos de voz. Esta política explica quais dados o app trata e como.</p>
+    <div class="summary">
+      <strong>Resumo</strong>
+      <p>O ReCapture não coleta dados pessoais. Suas capturas ficam no seu iPhone. Não há conta, anúncios, rastreadores nem servidores do ReCapture.</p>
+    </div>
+
+    <h2>1. Dados que não coletamos</h2>
+    <ul>
+      <li>Não criamos conta e não pedimos nome, e-mail ou telefone.</li>
+      <li>Não usamos analytics, publicidade, rastreadores ou cookies no app.</li>
+      <li>Não vendemos, alugamos nem compartilhamos dados pessoais.</li>
+      <li>Não recebemos vídeos, áudios, comandos de voz ou metadados das suas capturas.</li>
+    </ul>
+
+    <h2>2. Dados processados no seu iPhone</h2>
+    <p>Tudo o que o app usa para gravar e organizar capturas é processado no aparelho:</p>
+    <ul>
+      <li><strong>Câmera.</strong> Usada para o buffer de pré-gravação e para gravar os vídeos. As imagens não são enviadas para servidores do ReCapture.</li>
+      <li><strong>Microfone.</strong> Usado para o áudio do vídeo e para escutar os comandos de voz.</li>
+      <li><strong>Fala.</strong> O reconhecimento de voz roda no aparelho. O ReCapture só ativa os comandos quando o reconhecimento local está disponível no idioma escolhido; o áudio não é enviado para servidores do ReCapture.</li>
+      <li><strong>Fotos.</strong> Quando você toca em “Salvar na Fotos”, o app adiciona uma cópia do vídeo à sua biblioteca. O app não lê, não organiza e não apaga seus álbuns.</li>
+      <li><strong>Metadados.</strong> Espécie, peso, comprimento, local, condições e notas são opcionais, digitados por você e ficam salvos apenas no iPhone. O local é um texto informado por você, não um rastreamento de GPS.</li>
+      <li><strong>Compras.</strong> A assinatura Premium é processada pela Apple com StoreKit. O ReCapture recebe apenas a informação de que o acesso Premium está ativo; não recebe os dados do seu cartão.</li>
+    </ul>
+
+    <h2>3. Onde os dados ficam</h2>
+    <p>Capturas, metadados e preferências ficam no armazenamento local do app, no seu iPhone. O ReCapture não tem conta, sincronização entre aparelhos ou servidores próprios.</p>
+    <ul>
+      <li>Excluir uma captura no app remove o arquivo do ReCapture.</li>
+      <li>“Salvar na Fotos” cria uma cópia independente, controlada por você na biblioteca de Fotos.</li>
+      <li>Remover o app apaga os dados locais do ReCapture. Cópias salvas na Fotos não são afetadas.</li>
+      <li>Se você usa backup do iOS, os dados do app podem ser incluídos no backup feito pela Apple. Esse backup é controlado pela Apple, não pelo ReCapture.</li>
+    </ul>
+
+    <h2>4. Compras e assinaturas</h2>
+    <p>O ReCapture Premium é uma assinatura auto-renovável vendida pela Apple na App Store. Preços, período e oferta introdutória são exibidos no app antes da compra. A Apple processa o pagamento; o ReCapture não recebe nem armazena os dados completos do seu cartão.</p>
+    <p>Para gerenciar ou cancelar, use Ajustes &gt; [seu nome] &gt; Assinaturas no iPhone ou <a href="https://apps.apple.com/account/subscriptions" target="_blank" rel="noopener">apps.apple.com/account/subscriptions</a>. Reembolsos são analisados pela Apple em <a href="https://reportaproblem.apple.com/" target="_blank" rel="noopener">reportaproblem.apple.com</a>.</p>
+
+    <h2>5. Este site</h2>
+    <p>Este site é estático e hospedado no GitHub Pages. Não usamos cookies, analytics, anúncios ou rastreadores. O GitHub pode registrar dados técnicos, como endereço IP e user agent, para operar e proteger o serviço; consulte a <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener">Política de Privacidade do GitHub</a>.</p>
+    <p>O site não tem formulários, login ou área de conta. O contato é feito por GitHub Issues, que é público: não publique dados pessoais sensíveis.</p>
+
+    <h2>6. Seus direitos</h2>
+    <p>Como o ReCapture não coleta dados pessoais, não mantemos uma base de dados para acessar, corrigir ou excluir. Você controla os dados locais diretamente no app e nos Ajustes do iPhone.</p>
+    <p>Se tiver dúvidas sobre privacidade, abra uma issue no repositório público.</p>
+
+    <h2>7. Alterações</h2>
+    <p>Podemos atualizar esta política para refletir mudanças no app ou na lei. A data no topo indica a versão publicada. Mudanças importantes serão refletidas nesta página.</p>
+
+    <h2>8. Contato</h2>
+    <p>Dúvidas, correções ou solicitações: <a href="https://github.com/guirar/recapture-legal/issues" target="_blank" rel="noopener">GitHub Issues do recapture-legal</a>.</p>
+    <p class="note">O ReCapture é um app independente. Apple, App Store, iPhone, Fotos e StoreKit são marcas ou serviços da Apple Inc.</p>
+  </section>
+
+  <section lang="en" data-lang-section="en">
+    <nav class="crumbs" aria-label="Navigation">
+      <a href="index.html" data-page="index.html">Home</a>
+      <span aria-hidden="true">·</span>
+      <span class="current" aria-current="page">Privacy</span>
+      <span aria-hidden="true">·</span>
+      <a href="support.html" data-page="support.html">Support</a>
+    </nav>
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: October 28, 2026</p>
+    <p class="lead">ReCapture is an iPhone app for recording fishing captures with a pre-record buffer and voice commands. This policy explains what data the app handles and how.</p>
+    <div class="summary">
+      <strong>Summary</strong>
+      <p>ReCapture does not collect personal data. Your captures stay on your iPhone. There is no account, advertising, tracking, or ReCapture server.</p>
+    </div>
+
+    <h2>1. Data we do not collect</h2>
+    <ul>
+      <li>We do not create an account or ask for your name, email, or phone number.</li>
+      <li>We do not use analytics, advertising, trackers, or cookies in the app.</li>
+      <li>We do not sell, rent, or share personal data.</li>
+      <li>We do not receive videos, audio, voice commands, or capture metadata.</li>
+    </ul>
+
+    <h2>2. Data processed on your iPhone</h2>
+    <p>Everything the app uses to record and organize captures is processed on the device:</p>
+    <ul>
+      <li><strong>Camera.</strong> Used for the pre-record buffer and to record videos. Footage is not sent to ReCapture servers.</li>
+      <li><strong>Microphone.</strong> Used for video audio and to listen for voice commands.</li>
+      <li><strong>Speech.</strong> Voice recognition runs on the device. ReCapture only enables voice commands when on-device recognition is available in the selected language; audio is not sent to ReCapture servers.</li>
+      <li><strong>Photos.</strong> When you tap “Save to Photos,” the app adds a copy of the video to your library. The app does not read, organize, or delete your albums.</li>
+      <li><strong>Metadata.</strong> Species, weight, length, location, conditions, and notes are optional, typed by you, and stored only on the iPhone. Location is text you enter, not GPS tracking.</li>
+      <li><strong>Purchases.</strong> The Premium subscription is processed by Apple with StoreKit. ReCapture only receives the status of your Premium entitlement; it does not receive your card details.</li>
+    </ul>
+
+    <h2>3. Where data is stored</h2>
+    <p>Captures, metadata, and preferences are stored in the app’s local storage on your iPhone. ReCapture has no account, no cross-device sync, and no servers of its own.</p>
+    <ul>
+      <li>Deleting a capture in the app removes the file from ReCapture.</li>
+      <li>“Save to Photos” creates an independent copy that you control in your Photos library.</li>
+      <li>Deleting the app erases ReCapture’s local data. Copies saved to Photos are not affected.</li>
+      <li>If you use iOS backups, app data may be included in the backup made by Apple. That backup is controlled by Apple, not ReCapture.</li>
+    </ul>
+
+    <h2>4. Purchases and subscriptions</h2>
+    <p>ReCapture Premium is an auto-renewable subscription sold by Apple on the App Store. Prices, period, and introductory offer are shown in the app before purchase. Apple processes payment; ReCapture does not receive or store your full card details.</p>
+    <p>To manage or cancel, go to Settings &gt; [your name] &gt; Subscriptions on your iPhone, or visit <a href="https://apps.apple.com/account/subscriptions" target="_blank" rel="noopener">apps.apple.com/account/subscriptions</a>. Refunds are handled by Apple at <a href="https://reportaproblem.apple.com/" target="_blank" rel="noopener">reportaproblem.apple.com</a>.</p>
+
+    <h2>5. This website</h2>
+    <p>This is a static website hosted on GitHub Pages. We do not use cookies, analytics, advertising, or trackers. GitHub may log technical data such as IP address and user agent to operate and protect the service; see the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener">GitHub Privacy Statement</a>.</p>
+    <p>The site has no forms, login, or account area. Contact happens through GitHub Issues, which is public: do not post sensitive personal information.</p>
+
+    <h2>6. Your rights</h2>
+    <p>Because ReCapture does not collect personal data, we do not hold a database to access, correct, or delete. You control local data directly in the app and in iOS Settings.</p>
+    <p>If you have privacy questions, open an issue in the public repository.</p>
+
+    <h2>7. Changes</h2>
+    <p>We may update this policy to reflect changes in the app or the law. The date at the top shows the published version. Important changes will be reflected on this page.</p>
+
+    <h2>8. Contact</h2>
+    <p>Questions, corrections, or requests: <a href="https://github.com/guirar/recapture-legal/issues" target="_blank" rel="noopener">GitHub Issues for recapture-legal</a>.</p>
+    <p class="note">ReCapture is an independent app. Apple, App Store, iPhone, Photos, and StoreKit are trademarks or services of Apple Inc.</p>
+  </section>
+
+  <section lang="es" data-lang-section="es">
+    <nav class="crumbs" aria-label="Navegación">
+      <a href="index.html" data-page="index.html">Inicio</a>
+      <span aria-hidden="true">·</span>
+      <span class="current" aria-current="page">Privacidad</span>
+      <span aria-hidden="true">·</span>
+      <a href="support.html" data-page="support.html">Soporte</a>
+    </nav>
+    <h1>Política de Privacidad</h1>
+    <p class="updated">Última actualización: 28/10/2026</p>
+    <p class="lead">ReCapture es una app para iPhone que graba capturas de pesca con un búfer de pregrabación y comandos de voz. Esta política explica qué datos trata la app y cómo.</p>
+    <div class="summary">
+      <strong>Resumen</strong>
+      <p>ReCapture no recopila datos personales. Tus capturas se quedan en tu iPhone. No hay cuenta, anuncios, rastreadores ni servidores de ReCapture.</p>
+    </div>
+
+    <h2>1. Datos que no recopilamos</h2>
+    <ul>
+      <li>No creamos una cuenta ni pedimos tu nombre, correo electrónico o teléfono.</li>
+      <li>No usamos analítica, publicidad, rastreadores ni cookies en la app.</li>
+      <li>No vendemos, alquilamos ni compartimos datos personales.</li>
+      <li>No recibimos vídeos, audios, comandos de voz ni metadatos de tus capturas.</li>
+    </ul>
+
+    <h2>2. Datos procesados en tu iPhone</h2>
+    <p>Todo lo que la app usa para grabar y organizar capturas se procesa en el dispositivo:</p>
+    <ul>
+      <li><strong>Cámara.</strong> Se usa para el búfer de pregrabación y para grabar los vídeos. Las imágenes no se envían a servidores de ReCapture.</li>
+      <li><strong>Micrófono.</strong> Se usa para el audio del vídeo y para escuchar los comandos de voz.</li>
+      <li><strong>Voz.</strong> El reconocimiento de voz se ejecuta en el dispositivo. ReCapture solo activa los comandos cuando el reconocimiento local está disponible en el idioma elegido; el audio no se envía a servidores de ReCapture.</li>
+      <li><strong>Fotos.</strong> Cuando tocas “Guardar en Fotos”, la app añade una copia del vídeo a tu biblioteca. La app no lee, organiza ni borra tus álbumes.</li>
+      <li><strong>Metadatos.</strong> Especie, peso, longitud, lugar, condiciones y notas son opcionales, los escribes tú y se guardan solo en el iPhone. El lugar es un texto que introduces, no un rastreo GPS.</li>
+      <li><strong>Compras.</strong> La suscripción Premium la procesa Apple con StoreKit. ReCapture solo recibe el estado de tu acceso Premium; no recibe los datos de tu tarjeta.</li>
+    </ul>
+
+    <h2>3. Dónde se guardan los datos</h2>
+    <p>Las capturas, los metadatos y las preferencias se guardan en el almacenamiento local de la app, en tu iPhone. ReCapture no tiene cuenta, sincronización entre dispositivos ni servidores propios.</p>
+    <ul>
+      <li>Eliminar una captura en la app borra el archivo de ReCapture.</li>
+      <li>“Guardar en Fotos” crea una copia independiente que tú controlas en tu biblioteca de Fotos.</li>
+      <li>Eliminar la app borra los datos locales de ReCapture. Las copias guardadas en Fotos no se ven afectadas.</li>
+      <li>Si usas copias de seguridad de iOS, los datos de la app pueden incluirse en la copia que hace Apple. Esa copia la controla Apple, no ReCapture.</li>
+    </ul>
+
+    <h2>4. Compras y suscripciones</h2>
+    <p>ReCapture Premium es una suscripción autorrenovable que vende Apple en la App Store. Los precios, el período y la oferta introductoria se muestran en la app antes de comprar. Apple procesa el pago; ReCapture no recibe ni almacena los datos completos de tu tarjeta.</p>
+    <p>Para gestionar o cancelar, ve a Ajustes &gt; [tu nombre] &gt; Suscripciones en tu iPhone o visita <a href="https://apps.apple.com/account/subscriptions" target="_blank" rel="noopener">apps.apple.com/account/subscriptions</a>. Los reembolsos los gestiona Apple en <a href="https://reportaproblem.apple.com/" target="_blank" rel="noopener">reportaproblem.apple.com</a>.</p>
+
+    <h2>5. Este sitio</h2>
+    <p>Este sitio es estático y está alojado en GitHub Pages. No usamos cookies, analítica, anuncios ni rastreadores. GitHub puede registrar datos técnicos, como la dirección IP y el user agent, para operar y proteger el servicio; consulta la <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener">Política de Privacidad de GitHub</a>.</p>
+    <p>El sitio no tiene formularios, inicio de sesión ni área de cuenta. El contacto se hace por GitHub Issues, que es público: no publiques datos personales sensibles.</p>
+
+    <h2>6. Tus derechos</h2>
+    <p>Como ReCapture no recopila datos personales, no mantenemos una base de datos para acceder, corregir o eliminar. Tú controlas los datos locales directamente en la app y en los Ajustes de iOS.</p>
+    <p>Si tienes dudas sobre privacidad, abre una issue en el repositorio público.</p>
+
+    <h2>7. Cambios</h2>
+    <p>Podemos actualizar esta política para reflejar cambios en la app o en la ley. La fecha de la parte superior indica la versión publicada. Los cambios importantes se reflejarán en esta página.</p>
+
+    <h2>8. Contacto</h2>
+    <p>Dudas, correcciones o solicitudes: <a href="https://github.com/guirar/recapture-legal/issues" target="_blank" rel="noopener">GitHub Issues de recapture-legal</a>.</p>
+    <p class="note">ReCapture es una app independiente. Apple, App Store, iPhone, Fotos y StoreKit son marcas o servicios de Apple Inc.</p>
+  </section>
+
+</main>
+<footer>
+  <div class="footer-inner">
+    <span>ReCapture · 28/10/2026</span>
+    <span><a href="https://github.com/guirar/recapture-legal/issues" target="_blank" rel="noopener">GitHub Issues</a></span>
+  </div>
+</footer>
+<script>
+(function () {
+  "use strict";
+  var sections = Array.prototype.slice.call(document.querySelectorAll("[data-lang-section]"));
+  var buttons = Array.prototype.slice.call(document.querySelectorAll("[data-lang]"));
+  var links = Array.prototype.slice.call(document.querySelectorAll("a[data-page]"));
+
+  function normalize(value) {
+    value = String(value || "").toLowerCase();
+    if (value.indexOf("pt") === 0) { return "pt"; }
+    if (value.indexOf("es") === 0) { return "es"; }
+    if (value.indexOf("en") === 0) { return "en"; }
+    return "";
+  }
+
+  function initialLanguage() {
+    var query = "";
+    try {
+      query = new URLSearchParams(window.location.search).get("lang") || "";
+    } catch (error) {}
+    return normalize(query) || normalize(navigator.language) || "pt";
+  }
+
+  function setLanguage(language) {
+    sections.forEach(function (section) {
+      section.classList.toggle("is-active", section.getAttribute("data-lang-section") === language);
+    });
+    buttons.forEach(function (button) {
+      button.setAttribute("aria-pressed", button.getAttribute("data-lang") === language ? "true" : "false");
+    });
+    links.forEach(function (link) {
+      link.setAttribute("href", link.getAttribute("data-page") + "?lang=" + language);
+    });
+    document.documentElement.setAttribute("lang", language === "pt" ? "pt-BR" : language);
+  }
+
+  buttons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      var language = button.getAttribute("data-lang");
+      setLanguage(language);
+      try { history.replaceState(null, "", "?lang=" + language); } catch (error) {}
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  });
+
+  setLanguage(initialLanguage());
+  document.documentElement.classList.add("lang-ready");
+})();
+</script>
+</body>
+</html>

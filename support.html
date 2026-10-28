@@ -1,0 +1,616 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101820">
+<title>Suporte — ReCapture</title>
+<meta name="description" content="Suporte do ReCapture: como gravar, comandos de voz, salvar e compartilhar, Premium, permissões e contato.">
+<link rel="canonical" href="https://guirar.github.io/recapture-legal/support.html">
+<style>
+  :root {
+    --bg: #f6f7f9;
+    --surface: #ffffff;
+    --text: #17202a;
+    --muted: #5b6773;
+    --border: #e1e7ef;
+    --header: #101820;
+    --accent: #ff4d3d;
+    --link: #0b62c4;
+    --summary: #fff4f2;
+    --summary-border: #ffd6d0;
+    --table-head: #f0f4f8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0d1218;
+      --surface: #141c24;
+      --text: #e8eef4;
+      --muted: #a3b0bd;
+      --border: #26323e;
+      --header: #0a0f14;
+      --accent: #ff5a4e;
+      --link: #7cc4ff;
+      --summary: #241715;
+      --summary-border: #5a2b26;
+      --table-head: #1b2530;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+  }
+  a { color: var(--link); text-underline-offset: 2px; }
+  a:hover { text-decoration-thickness: 2px; }
+  a:focus-visible, button:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+  .skip {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    background: var(--surface);
+    color: var(--text);
+    padding: 10px 14px;
+    z-index: 10;
+  }
+  .skip:focus { left: 12px; top: 12px; }
+  .site-header {
+    background: var(--header);
+    color: #ffffff;
+    padding: 16px 20px;
+  }
+  .header-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: -0.01em;
+  }
+  .brand-dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 4px rgba(255, 77, 61, 0.18);
+    flex: none;
+  }
+  .lang-nav { display: flex; gap: 6px; }
+  .lang-nav button {
+    appearance: none;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    color: #ffffff;
+    border-radius: 999px;
+    padding: 5px 12px;
+    font: inherit;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+  }
+  .lang-nav button:hover { border-color: rgba(255, 255, 255, 0.6); }
+  .lang-nav button[aria-pressed="true"] {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #ffffff;
+  }
+  main {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 40px 20px 64px;
+  }
+  .lang-ready [data-lang-section] { display: none; }
+  .lang-ready [data-lang-section].is-active { display: block; }
+  h1 {
+    margin: 0 0 8px;
+    font-size: clamp(1.85rem, 6vw, 2.7rem);
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+  }
+  h2 {
+    margin: 36px 0 10px;
+    font-size: 1.28rem;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+  }
+  h3 {
+    margin: 26px 0 6px;
+    font-size: 1.04rem;
+    line-height: 1.4;
+  }
+  p { margin: 10px 0; }
+  ul, ol { padding-left: 1.3rem; }
+  li { margin: 7px 0; }
+  .updated {
+    margin: 0 0 18px;
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+  .lead {
+    max-width: 68ch;
+    color: var(--muted);
+    font-size: 1.03rem;
+  }
+  .crumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    margin: 0 0 24px;
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+  .crumbs a { color: var(--muted); }
+  .crumbs .current { color: var(--text); font-weight: 600; }
+  .summary {
+    margin: 24px 0;
+    padding: 16px 18px;
+    background: var(--summary);
+    border: 1px solid var(--summary-border);
+    border-left: 4px solid var(--accent);
+    border-radius: 10px;
+  }
+  .summary strong { display: block; margin-bottom: 4px; }
+  .summary p { margin: 0; }
+  .table-wrap { overflow-x: auto; margin: 14px 0; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    font-size: 0.95rem;
+  }
+  th, td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  th { background: var(--table-head); font-size: 0.88rem; }
+  tr:last-child td { border-bottom: 0; }
+  .note {
+    margin-top: 28px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+  footer {
+    border-top: 1px solid var(--border);
+    background: var(--surface);
+    padding: 22px 20px;
+    color: var(--muted);
+    font-size: 0.88rem;
+  }
+  .footer-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    justify-content: space-between;
+  }
+  .footer-inner a { color: var(--muted); }
+  .noscript {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 12px 20px 0;
+    color: var(--muted);
+    font-size: 0.88rem;
+  }
+  @media print {
+    .site-header, footer { display: none; }
+    body { background: #ffffff; color: #000000; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Pular para o conteúdo</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html" data-page="index.html"><span class="brand-dot" aria-hidden="true"></span>ReCapture</a>
+    <nav class="lang-nav" aria-label="Language">
+      <button type="button" data-lang="pt" aria-pressed="true" aria-label="Português">PT</button>
+      <button type="button" data-lang="en" aria-pressed="false" aria-label="English">EN</button>
+      <button type="button" data-lang="es" aria-pressed="false" aria-label="Español">ES</button>
+    </nav>
+  </div>
+</header>
+<noscript><p class="noscript">Todos os idiomas estão disponíveis abaixo. / All languages are available below. / Todos los idiomas están disponibles abajo.</p></noscript>
+<main id="main">
+
+  <section lang="pt-BR" data-lang-section="pt">
+    <nav class="crumbs" aria-label="Navegação">
+      <a href="index.html" data-page="index.html">Início</a>
+      <span aria-hidden="true">·</span>
+      <a href="privacy.html" data-page="privacy.html">Privacidade</a>
+      <span aria-hidden="true">·</span>
+      <span class="current" aria-current="page">Suporte</span>
+    </nav>
+    <h1>Suporte</h1>
+    <p class="updated">Última atualização: 28/10/2026</p>
+    <p class="lead">Ajuda para gravar, salvar e compartilhar suas capturas, entender o Premium e resolver permissões.</p>
+
+    <h2>Comece em 5 passos</h2>
+    <ol>
+      <li><strong>Permita o acesso.</strong> Na primeira vez, autorize câmera, microfone e reconhecimento de fala. Para salvar vídeos, autorize adicionar à Fotos.</li>
+      <li><strong>Arme o buffer.</strong> Na tela da câmera, toque no botão vermelho. O ReCapture mantém os últimos segundos prontos.</li>
+      <li><strong>Inicie a captura.</strong> Com o buffer armado, toque no botão de novo ou diga o comando de início. O trecho anterior entra no vídeo.</li>
+      <li><strong>Pare.</strong> Toque no botão ou diga o comando de parada. O app grava a cauda configurada antes de finalizar.</li>
+      <li><strong>Abra a biblioteca.</strong> Com o Premium ativo, a captura aparece ali para salvar na Fotos, compartilhar, favoritar ou excluir.</li>
+    </ol>
+    <div class="summary">
+      <strong>Importante</strong>
+      <p>Gravar é gratuito. Salvar a captura ao parar e compartilhar pela biblioteca fazem parte do ReCapture Premium. Sem uma assinatura ativa, o app abre a tela do Premium ao tentar salvar ou compartilhar.</p>
+    </div>
+
+    <h2>Comandos de voz</h2>
+    <p>Os comandos padrão dependem do idioma:</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th scope="col">Idioma</th><th scope="col">Iniciar</th><th scope="col">Parar</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Português</td><td>“peguei”</td><td>“parar”</td></tr>
+          <tr><td>English</td><td>“got it”</td><td>“stop”</td></tr>
+          <tr><td>Español</td><td>“lo tengo”</td><td>“parar”</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Para trocar as frases, abra <strong>Ajustes &gt; Voz</strong>. Use comandos curtos, de 1 a 4 palavras, e evite palavras muito comuns no seu dia a dia. O reconhecimento roda no aparelho e exige permissão de fala.</p>
+    <p>Se a voz não funcionar, use o botão. Confira o idioma da voz, fale a frase exata e reduza o ruído ao redor. Em alguns aparelhos ou idiomas, o reconhecimento local pode não estar disponível.</p>
+
+    <h2>Salvar e compartilhar</h2>
+    <p>Na biblioteca, toque em uma captura para abrir o player. Use <strong>Salvar na Fotos</strong> para criar uma cópia na biblioteca de Fotos ou <strong>Compartilhar</strong> para enviar o vídeo por outros apps. Na primeira vez, o iOS pede permissão para adicionar vídeos à Fotos.</p>
+    <p>Salvar na Fotos cria uma cópia independente: excluir a captura do ReCapture não apaga a cópia da Fotos. Para liberar espaço no app, salve antes de excluir.</p>
+
+    <h2>ReCapture Premium</h2>
+    <ul>
+      <li><strong>Mensal:</strong> 14 dias grátis para novos assinantes elegíveis e depois o preço exibido na App Store.</li>
+      <li><strong>Anual:</strong> o preço exibido na App Store, sem teste grátis.</li>
+      <li>A assinatura renova automaticamente pelo mesmo período, salvo cancelamento com pelo menos 24 horas de antecedência do fim do período atual.</li>
+      <li>A oferta introdutória é limitada a uma por conta e pode não estar disponível para todos os usuários. Preços e ofertas variam por região e são sempre exibidos antes da compra.</li>
+    </ul>
+
+    <h3>Cancelar a assinatura</h3>
+    <p>No iPhone, abra <strong>Ajustes &gt; [seu nome] &gt; Assinaturas &gt; ReCapture &gt; Cancelar assinatura</strong>. Em versões mais antigas do iOS: <strong>Ajustes &gt; App Store &gt; [seu Apple ID] &gt; Assinaturas</strong>. Você também pode usar <a href="https://apps.apple.com/account/subscriptions" target="_blank" rel="noopener">apps.apple.com/account/subscriptions</a>.</p>
+    <p>Cancelar impede a próxima renovação. O acesso Premium continua até o fim do período já pago.</p>
+
+    <h3>Restaurar compras</h3>
+    <p>Abra a tela do Premium e toque em <strong>Restaurar compras</strong>. Use o mesmo Apple ID usado na compra. Se nenhuma assinatura ativa for encontrada, confira o Apple ID e a conexão com a internet.</p>
+
+    <h3>Reembolsos</h3>
+    <p>Reembolsos são analisados pela Apple, não pelo ReCapture. Solicite em <a href="https://reportaproblem.apple.com/" target="_blank" rel="noopener">reportaproblem.apple.com</a>.</p>
+
+    <h2>Permissões</h2>
+    <ul>
+      <li><strong>Câmera:</strong> necessária para o buffer e para gravar os vídeos.</li>
+      <li><strong>Microfone:</strong> grava o áudio do vídeo e escuta os comandos. Sem ele, os vídeos ficam sem áudio e os comandos de voz não funcionam.</li>
+      <li><strong>Reconhecimento de fala:</strong> necessário para os comandos de voz no aparelho.</li>
+      <li><strong>Fotos (adicionar):</strong> usada apenas quando você toca em Salvar na Fotos.</li>
+    </ul>
+    <p>Para liberar uma permissão, abra <strong>Ajustes do iPhone &gt; ReCapture</strong> e ative a opção. Depois volte ao app.</p>
+
+    <h2>Perguntas frequentes</h2>
+
+    <h3>A captura não foi salva. O que aconteceu?</h3>
+    <p>Salvar a captura ao parar e compartilhar pela biblioteca exigem Premium. Se você fechar a tela do Premium sem assinar ou restaurar, a captura em andamento é descartada. Também pode faltar espaço no iPhone. Verifique o armazenamento e tente de novo.</p>
+
+    <h3>O vídeo ficou sem áudio.</h3>
+    <p>Sem permissão de microfone, o ReCapture grava vídeos sem áudio. Libere o microfone em <strong>Ajustes do iPhone &gt; ReCapture</strong>. Verifique também se outra app não está usando o microfone.</p>
+
+    <h3>Os comandos de voz não funcionam.</h3>
+    <p>Confirme a permissão de Reconhecimento de Fala e o idioma da voz. O reconhecimento precisa estar disponível no aparelho; se não estiver, use o botão. Fale a frase curta, sem ruído, e confira se ela está na lista em <strong>Ajustes &gt; Voz</strong>.</p>
+
+    <h3>Onde ficam meus vídeos?</h3>
+    <p>No armazenamento local do ReCapture, no seu iPhone. Não há conta, sincronização ou nuvem do ReCapture. Salve na Fotos as capturas que quiser manter; excluir o app apaga os dados locais.</p>
+
+    <h3>Como apago meus dados?</h3>
+    <p>Exclua capturas na biblioteca, limpe os buffers temporários em <strong>Ajustes &gt; Armazenamento</strong> e remova o app. Não há conta para excluir. Cópias salvas na Fotos são removidas por você no app Fotos.</p>
+
+    <h3>Preciso de internet?</h3>
+    <p>Gravar, usar comandos de voz e salvar na Fotos funcionam sem internet. Comprar, restaurar compras e gerenciar a assinatura precisam de conexão com a App Store.</p>
+
+    <h3>Perdi capturas ao reinstalar o app. É possível recuperar?</h3>
+    <p>O ReCapture não sincroniza capturas. Reinstalar o app não recupera vídeos que não estejam na Fotos ou em um backup do iOS compatível. A restauração de backup é feita pela Apple.</p>
+
+    <h3>Como vejo a versão do app?</h3>
+    <p>Abra <strong>Ajustes &gt; Sobre</strong> no ReCapture. A versão e o build aparecem na seção Sobre.</p>
+
+    <h2>Não encontrou a resposta?</h2>
+    <p>Abra uma issue no repositório público: <a href="https://github.com/guirar/recapture-legal/issues" target="_blank" rel="noopener">github.com/guirar/recapture-legal/issues</a>. Inclua o modelo do iPhone, a versão do iOS, a versão do ReCapture e o passo a passo do problema.</p>
+    <p>O GitHub Issues é o canal oficial de suporte. Não publique vídeos, dados pessoais ou informações sensíveis em uma issue pública.</p>
+    <p class="note">O ReCapture é um app independente. Apple, App Store, iPhone, Fotos e StoreKit são marcas ou serviços da Apple Inc.</p>
+  </section>
+
+  <section lang="en" data-lang-section="en">
+    <nav class="crumbs" aria-label="Navigation">
+      <a href="index.html" data-page="index.html">Home</a>
+      <span aria-hidden="true">·</span>
+      <a href="privacy.html" data-page="privacy.html">Privacy</a>
+      <span aria-hidden="true">·</span>
+      <span class="current" aria-current="page">Support</span>
+    </nav>
+    <h1>Support</h1>
+    <p class="updated">Last updated: October 28, 2026</p>
+    <p class="lead">Help with recording, saving, and sharing captures, understanding Premium, and fixing permissions.</p>
+
+    <h2>Get started in 5 steps</h2>
+    <ol>
+      <li><strong>Allow access.</strong> On first launch, allow camera, microphone, and speech recognition. To save videos, allow adding to Photos.</li>
+      <li><strong>Arm the buffer.</strong> On the camera screen, tap the red button. ReCapture keeps the last few seconds ready.</li>
+      <li><strong>Start the capture.</strong> With the buffer armed, tap the button again or say the start command. The buffered seconds are included in the video.</li>
+      <li><strong>Stop.</strong> Tap the button or say the stop command. The app records the configured tail before finishing.</li>
+      <li><strong>Open the library.</strong> With Premium active, the capture appears there to save to Photos, share, favorite, or delete.</li>
+    </ol>
+    <div class="summary">
+      <strong>Important</strong>
+      <p>Recording is free. Saving the capture when you stop and sharing from the library are part of ReCapture Premium. Without an active subscription, the app shows the Premium screen when you try to save or share.</p>
+    </div>
+
+    <h2>Voice commands</h2>
+    <p>The default commands depend on the language:</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th scope="col">Language</th><th scope="col">Start</th><th scope="col">Stop</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Portuguese</td><td>“peguei”</td><td>“parar”</td></tr>
+          <tr><td>English</td><td>“got it”</td><td>“stop”</td></tr>
+          <tr><td>Spanish</td><td>“lo tengo”</td><td>“parar”</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>To change the phrases, open <strong>Settings &gt; Voice</strong>. Use short commands of 1 to 4 words and avoid words you say often in daily life. Recognition runs on the device and requires speech permission.</p>
+    <p>If voice does not work, use the button. Check the voice language, say the exact phrase, and reduce background noise. On some devices or languages, on-device recognition may not be available.</p>
+
+    <h2>Save and share</h2>
+    <p>In the library, tap a capture to open the player. Use <strong>Save to Photos</strong> to create a copy in your Photos library, or <strong>Share</strong> to send the video through other apps. The first time, iOS asks for permission to add videos to Photos.</p>
+    <p>Save to Photos creates an independent copy: deleting the capture from ReCapture does not delete the Photos copy. To free up space in the app, save it before deleting.</p>
+
+    <h2>ReCapture Premium</h2>
+    <ul>
+      <li><strong>Monthly:</strong> 14 days free for eligible new subscribers, then the price shown on the App Store.</li>
+      <li><strong>Annual:</strong> the price shown on the App Store, with no free trial.</li>
+      <li>The subscription renews automatically for the same period unless canceled at least 24 hours before the current period ends.</li>
+      <li>The introductory offer is limited to one per account and may not be available to every user. Prices and offers vary by region and are always shown before purchase.</li>
+    </ul>
+
+    <h3>Cancel the subscription</h3>
+    <p>On your iPhone, open <strong>Settings &gt; [your name] &gt; Subscriptions &gt; ReCapture &gt; Cancel Subscription</strong>. On older iOS versions: <strong>Settings &gt; App Store &gt; [your Apple ID] &gt; Subscriptions</strong>. You can also visit <a href="https://apps.apple.com/account/subscriptions" target="_blank" rel="noopener">apps.apple.com/account/subscriptions</a>.</p>
+    <p>Canceling stops the next renewal. Premium access continues until the end of the period you already paid for.</p>
+
+    <h3>Restore purchases</h3>
+    <p>Open the Premium screen and tap <strong>Restore Purchases</strong>. Use the same Apple ID you used to purchase. If no active subscription is found, check your Apple ID and internet connection.</p>
+
+    <h3>Refunds</h3>
+    <p>Refunds are handled by Apple, not ReCapture. Request one at <a href="https://reportaproblem.apple.com/" target="_blank" rel="noopener">reportaproblem.apple.com</a>.</p>
+
+    <h2>Permissions</h2>
+    <ul>
+      <li><strong>Camera:</strong> required for the buffer and to record videos.</li>
+      <li><strong>Microphone:</strong> records video audio and listens for commands. Without it, videos have no audio and voice commands do not work.</li>
+      <li><strong>Speech recognition:</strong> required for on-device voice commands.</li>
+      <li><strong>Photos (add):</strong> used only when you tap Save to Photos.</li>
+    </ul>
+    <p>To allow a permission, open <strong>iPhone Settings &gt; ReCapture</strong> and turn it on. Then return to the app.</p>
+
+    <h2>Frequently asked questions</h2>
+
+    <h3>The capture was not saved. What happened?</h3>
+    <p>Saving the capture when you stop and sharing from the library require Premium. If you close the Premium screen without subscribing or restoring, the capture in progress is discarded. Your iPhone may also be low on storage. Check available space and try again.</p>
+
+    <h3>The video has no audio.</h3>
+    <p>Without microphone permission, ReCapture records videos without audio. Allow the microphone in <strong>iPhone Settings &gt; ReCapture</strong>. Also check that another app is not using the microphone.</p>
+
+    <h3>Voice commands do not work.</h3>
+    <p>Confirm speech recognition permission and the voice language. On-device recognition must be available; if it is not, use the button. Say the exact short phrase, reduce background noise, and check that the phrase is in the list under <strong>Settings &gt; Voice</strong>.</p>
+
+    <h3>Where are my videos?</h3>
+    <p>In ReCapture’s local storage on your iPhone. There is no ReCapture account, sync, or cloud. Save the captures you want to keep to Photos; deleting the app erases local data.</p>
+
+    <h3>How do I delete my data?</h3>
+    <p>Delete captures in the library, clear temporary buffers under <strong>Settings &gt; Storage</strong>, and remove the app. There is no account to delete. Copies saved to Photos are deleted by you in the Photos app.</p>
+
+    <h3>Do I need the internet?</h3>
+    <p>Recording, using voice commands, and saving to Photos work offline. Purchasing, restoring purchases, and managing the subscription require a connection to the App Store.</p>
+
+    <h3>I lost captures after reinstalling the app. Can I recover them?</h3>
+    <p>ReCapture does not sync captures. Reinstalling the app does not recover videos that were not in Photos or in a compatible iOS backup. Backup restoration is handled by Apple.</p>
+
+    <h3>How do I check the app version?</h3>
+    <p>Open <strong>Settings &gt; About</strong> in ReCapture. The version and build appear in the About section.</p>
+
+    <h2>Still need help?</h2>
+    <p>Open an issue in the public repository: <a href="https://github.com/guirar/recapture-legal/issues" target="_blank" rel="noopener">github.com/guirar/recapture-legal/issues</a>. Include your iPhone model, iOS version, ReCapture version, and the steps that led to the problem.</p>
+    <p>GitHub Issues is the official support channel. Do not post videos, personal data, or sensitive information in a public issue.</p>
+    <p class="note">ReCapture is an independent app. Apple, App Store, iPhone, Photos, and StoreKit are trademarks or services of Apple Inc.</p>
+  </section>
+
+  <section lang="es" data-lang-section="es">
+    <nav class="crumbs" aria-label="Navegación">
+      <a href="index.html" data-page="index.html">Inicio</a>
+      <span aria-hidden="true">·</span>
+      <a href="privacy.html" data-page="privacy.html">Privacidad</a>
+      <span aria-hidden="true">·</span>
+      <span class="current" aria-current="page">Soporte</span>
+    </nav>
+    <h1>Soporte</h1>
+    <p class="updated">Última actualización: 28/10/2026</p>
+    <p class="lead">Ayuda para grabar, guardar y compartir tus capturas, entender Premium y resolver permisos.</p>
+
+    <h2>Empieza en 5 pasos</h2>
+    <ol>
+      <li><strong>Permite el acceso.</strong> La primera vez, autoriza la cámara, el micrófono y el reconocimiento de voz. Para guardar vídeos, autoriza añadir a Fotos.</li>
+      <li><strong>Arma el búfer.</strong> En la pantalla de la cámara, toca el botón rojo. ReCapture mantiene listos los últimos segundos.</li>
+      <li><strong>Inicia la captura.</strong> Con el búfer armado, toca el botón de nuevo o di el comando de inicio. El fragmento anterior se incluye en el vídeo.</li>
+      <li><strong>Detén.</strong> Toca el botón o di el comando de parada. La app graba la cola configurada antes de terminar.</li>
+      <li><strong>Abre la biblioteca.</strong> Con Premium activo, la captura aparece allí para guardarla en Fotos, compartirla, marcarla como favorita o eliminarla.</li>
+    </ol>
+    <div class="summary">
+      <strong>Importante</strong>
+      <p>Grabar es gratis. Guardar la captura al detener y compartir desde la biblioteca forman parte de ReCapture Premium. Sin una suscripción activa, la app muestra la pantalla de Premium al intentar guardar o compartir.</p>
+    </div>
+
+    <h2>Comandos de voz</h2>
+    <p>Los comandos predeterminados dependen del idioma:</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th scope="col">Idioma</th><th scope="col">Iniciar</th><th scope="col">Parar</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Portugués</td><td>“peguei”</td><td>“parar”</td></tr>
+          <tr><td>English</td><td>“got it”</td><td>“stop”</td></tr>
+          <tr><td>Español</td><td>“lo tengo”</td><td>“parar”</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Para cambiar las frases, abre <strong>Ajustes &gt; Voz</strong>. Usa comandos cortos, de 1 a 4 palabras, y evita palabras que digas mucho en tu día a día. El reconocimiento se ejecuta en el dispositivo y requiere permiso de voz.</p>
+    <p>Si la voz no funciona, usa el botón. Comprueba el idioma de la voz, di la frase exacta y reduce el ruido alrededor. En algunos dispositivos o idiomas, el reconocimiento local puede no estar disponible.</p>
+
+    <h2>Guardar y compartir</h2>
+    <p>En la biblioteca, toca una captura para abrir el reproductor. Usa <strong>Guardar en Fotos</strong> para crear una copia en tu biblioteca de Fotos o <strong>Compartir</strong> para enviar el vídeo por otras apps. La primera vez, iOS pide permiso para añadir vídeos a Fotos.</p>
+    <p>Guardar en Fotos crea una copia independiente: eliminar la captura de ReCapture no borra la copia de Fotos. Para liberar espacio en la app, guárdala antes de eliminarla.</p>
+
+    <h2>ReCapture Premium</h2>
+    <ul>
+      <li><strong>Mensual:</strong> 14 días gratis para nuevos suscriptores elegibles y después el precio que aparece en la App Store.</li>
+      <li><strong>Anual:</strong> el precio que aparece en la App Store, sin prueba gratis.</li>
+      <li>La suscripción se renueva automáticamente por el mismo período, salvo cancelación con al menos 24 horas de antelación al final del período actual.</li>
+      <li>La oferta introductoria está limitada a una por cuenta y puede no estar disponible para todos los usuarios. Los precios y las ofertas varían por región y siempre se muestran antes de comprar.</li>
+    </ul>
+
+    <h3>Cancelar la suscripción</h3>
+    <p>En tu iPhone, abre <strong>Ajustes &gt; [tu nombre] &gt; Suscripciones &gt; ReCapture &gt; Cancelar suscripción</strong>. En versiones anteriores de iOS: <strong>Ajustes &gt; App Store &gt; [tu Apple ID] &gt; Suscripciones</strong>. También puedes visitar <a href="https://apps.apple.com/account/subscriptions" target="_blank" rel="noopener">apps.apple.com/account/subscriptions</a>.</p>
+    <p>Cancelar impide la próxima renovación. El acceso Premium continúa hasta el final del período que ya pagaste.</p>
+
+    <h3>Restaurar compras</h3>
+    <p>Abre la pantalla de Premium y toca <strong>Restaurar compras</strong>. Usa el mismo Apple ID con el que compraste. Si no se encuentra ninguna suscripción activa, comprueba el Apple ID y la conexión a internet.</p>
+
+    <h3>Reembolsos</h3>
+    <p>Los reembolsos los gestiona Apple, no ReCapture. Solicítalo en <a href="https://reportaproblem.apple.com/" target="_blank" rel="noopener">reportaproblem.apple.com</a>.</p>
+
+    <h2>Permisos</h2>
+    <ul>
+      <li><strong>Cámara:</strong> necesaria para el búfer y para grabar los vídeos.</li>
+      <li><strong>Micrófono:</strong> graba el audio del vídeo y escucha los comandos. Sin él, los vídeos no tienen audio y los comandos de voz no funcionan.</li>
+      <li><strong>Reconocimiento de voz:</strong> necesario para los comandos de voz en el dispositivo.</li>
+      <li><strong>Fotos (añadir):</strong> se usa solo cuando tocas Guardar en Fotos.</li>
+    </ul>
+    <p>Para permitir un permiso, abre <strong>Ajustes del iPhone &gt; ReCapture</strong> y actívalo. Después vuelve a la app.</p>
+
+    <h2>Preguntas frecuentes</h2>
+
+    <h3>La captura no se guardó. ¿Qué pasó?</h3>
+    <p>Guardar la captura al detener y compartir desde la biblioteca requieren Premium. Si cierras la pantalla de Premium sin suscribirte o restaurar, la captura en curso se descarta. También puede faltar espacio en el iPhone. Comprueba el almacenamiento e inténtalo de nuevo.</p>
+
+    <h3>El vídeo no tiene audio.</h3>
+    <p>Sin permiso de micrófono, ReCapture graba vídeos sin audio. Permite el micrófono en <strong>Ajustes del iPhone &gt; ReCapture</strong>. Comprueba también que otra app no esté usando el micrófono.</p>
+
+    <h3>Los comandos de voz no funcionan.</h3>
+    <p>Confirma el permiso de Reconocimiento de Voz y el idioma de la voz. El reconocimiento debe estar disponible en el dispositivo; si no lo está, usa el botón. Di la frase corta exacta, reduce el ruido y comprueba que esté en la lista de <strong>Ajustes &gt; Voz</strong>.</p>
+
+    <h3>¿Dónde están mis vídeos?</h3>
+    <p>En el almacenamiento local de ReCapture, en tu iPhone. No hay cuenta, sincronización ni nube de ReCapture. Guarda en Fotos las capturas que quieras conservar; eliminar la app borra los datos locales.</p>
+
+    <h3>¿Cómo elimino mis datos?</h3>
+    <p>Elimina capturas en la biblioteca, limpia los búferes temporales en <strong>Ajustes &gt; Almacenamiento</strong> y elimina la app. No hay cuenta que eliminar. Las copias guardadas en Fotos las eliminas tú en la app Fotos.</p>
+
+    <h3>¿Necesito internet?</h3>
+    <p>Grabar, usar comandos de voz y guardar en Fotos funcionan sin internet. Comprar, restaurar compras y gestionar la suscripción requieren conexión con la App Store.</p>
+
+    <h3>Perdí capturas al reinstalar la app. ¿Se pueden recuperar?</h3>
+    <p>ReCapture no sincroniza capturas. Reinstalar la app no recupera vídeos que no estuvieran en Fotos o en una copia de seguridad compatible de iOS. La restauración de la copia la gestiona Apple.</p>
+
+    <h3>¿Cómo veo la versión de la app?</h3>
+    <p>Abre <strong>Ajustes &gt; Acerca de</strong> en ReCapture. La versión y el build aparecen en la sección Acerca de.</p>
+
+    <h2>¿No encuentras la respuesta?</h2>
+    <p>Abre una issue en el repositorio público: <a href="https://github.com/guirar/recapture-legal/issues" target="_blank" rel="noopener">github.com/guirar/recapture-legal/issues</a>. Incluye el modelo de iPhone, la versión de iOS, la versión de ReCapture y los pasos del problema.</p>
+    <p>GitHub Issues es el canal oficial de soporte. No publiques vídeos, datos personales ni información sensible en una issue pública.</p>
+    <p class="note">ReCapture es una app independiente. Apple, App Store, iPhone, Fotos y StoreKit son marcas o servicios de Apple Inc.</p>
+  </section>
+
+</main>
+<footer>
+  <div class="footer-inner">
+    <span>ReCapture · 28/10/2026</span>
+    <span><a href="https://github.com/guirar/recapture-legal/issues" target="_blank" rel="noopener">GitHub Issues</a></span>
+  </div>
+</footer>
+<script>
+(function () {
+  "use strict";
+  var sections = Array.prototype.slice.call(document.querySelectorAll("[data-lang-section]"));
+  var buttons = Array.prototype.slice.call(document.querySelectorAll("[data-lang]"));
+  var links = Array.prototype.slice.call(document.querySelectorAll("a[data-page]"));
+
+  function normalize(value) {
+    value = String(value || "").toLowerCase();
+    if (value.indexOf("pt") === 0) { return "pt"; }
+    if (value.indexOf("es") === 0) { return "es"; }
+    if (value.indexOf("en") === 0) { return "en"; }
+    return "";
+  }
+
+  function initialLanguage() {
+    var query = "";
+    try {
+      query = new URLSearchParams(window.location.search).get("lang") || "";
+    } catch (error) {}
+    return normalize(query) || normalize(navigator.language) || "pt";
+  }
+
+  function setLanguage(language) {
+    sections.forEach(function (section) {
+      section.classList.toggle("is-active", section.getAttribute("data-lang-section") === language);
+    });
+    buttons.forEach(function (button) {
+      button.setAttribute("aria-pressed", button.getAttribute("data-lang") === language ? "true" : "false");
+    });
+    links.forEach(function (link) {
+      link.setAttribute("href", link.getAttribute("data-page") + "?lang=" + language);
+    });
+    document.documentElement.setAttribute("lang", language === "pt" ? "pt-BR" : language);
+  }
+
+  buttons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      var language = button.getAttribute("data-lang");
+      setLanguage(language);
+      try { history.replaceState(null, "", "?lang=" + language); } catch (error) {}
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  });
+
+  setLanguage(initialLanguage());
+  document.documentElement.classList.add("lang-ready");
+})();
+</script>
+</body>
+</html>
